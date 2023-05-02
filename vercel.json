@@ -1,7 +1,6 @@
 {
    "version": 2,
    "name": "tiffin-service",
-   "buildCommand": "next build",
    "builds": [
       { "src": "index.js", "use": "@vercel/node" }
    ],
