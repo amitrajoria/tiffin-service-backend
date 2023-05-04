@@ -24,6 +24,10 @@
     request = {login token, payload}
     response = {msg}
 
+/pg/registered      GET
+    request = {login token}
+    response = {pg : which are registered on login vender}
+
 /venders        GET
     request = {login token}
     response = {venders}
@@ -44,13 +48,17 @@
     request = {login token}
     response = {msg}
 
-/orders         GET
+/orders?from-to date        GET
     request = {login token}
     response = {orders}
 
 /orders/add     POST
     request = {login token, payload}
     response = {msg}
+
+/orders/analytics?from-to date      GET 
+    request = {login token}
+    response = {analytics}
 
 /tiffins/:vender_id     GET
     request = {login token}
@@ -59,3 +67,11 @@
 /tiffins/add    POST
     request = {login token vender, payload}
     response = {msg}
+
+/tiffins/update    PATCH
+    request = {login token vender, payload(id, status)}
+    response = {tiffins}
+
+/customers/     GET
+    request = {login token}
+    response = {customers : which are registered with current vender}
